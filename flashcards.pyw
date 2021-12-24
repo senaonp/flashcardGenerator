@@ -3,7 +3,7 @@ import datetime as dt
 import os
 
 # config variables
-entries = [] # number of entries
+entries = [] # flashcard entries
 maxDisplay = 10 # number of entries to display in GUI
 delimiter = ":" # delimiter for front and back in generated file
 folderPath = "./decks/" # folder path for generated files
