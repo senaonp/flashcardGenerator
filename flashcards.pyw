@@ -2,6 +2,7 @@ import tkinter as tk
 import datetime as dt
 import os
 
+# config variables
 entries = [] # number of entries
 maxDisplay = 10 # number of entries to display in GUI
 delimiter = ":" # delimiter for front and back in generated file
@@ -9,6 +10,7 @@ folderPath = "./decks/" # folder path for generated files
 filename = f'{folderPath}{dt.datetime.now().strftime("%Y%m%d_%H%M%S")}_deck{len(os.listdir(folderPath))+1}.txt' # filename to generate
 allowBlankCards = False # allow blank front or back entries in a card
 
+# window instance
 w=tk.Tk()
 
 frontEntry = tk.StringVar()
@@ -16,16 +18,19 @@ backEntry = tk.StringVar()
 entriesText = tk.StringVar()
 errorsText = tk.StringVar()
 
+# add card to session
 def addCard():
 	if validateCard():
 		entries.append([frontEntry.get(),backEntry.get()])
-		entriesText.set('saved entries\n' + "\n".join([str(entry) for entry in entries[-10:][::-1]]))
+		entriesText.set('saved entries\n' + "\n".join([str(entry) for entry in entries[-maxDisplay:][::-1]]))
 		doAfterAddCard()
 
+# workflow after adding card
 def doAfterAddCard():
 	frontEntry.set("")
 	backEntry.set("")
 
+# validate card entry
 def validateCard():
 	errorsText.set('')
 	if allowBlankCards:
@@ -35,6 +40,7 @@ def validateCard():
 		errorsText.set('error: front or back entries cannot be blank')
 	return isValid
 
+# save entries into deck and exit program
 def saveAndExit():
 	file = open(filename, "w")
 	file.write("\n".join([delimiter.join(entry) for entry in entries]))
