@@ -14,7 +14,7 @@ allowBlankEntries = False # allow blank front or back entries in a card
 # entries variables
 entries = [] # flashcard entries
 frontEntries = [] # list of front entries
-backEntries = [] # list of front entries
+backEntries = [] # list of back entries
 
 # window instance
 w=tk.Tk()
@@ -59,7 +59,7 @@ def validateDelimiter():
 	infoText.set("\n".join(errors))
 	return len(errors) == 0
 
-# validate unique front
+# validate unique entries
 def validateUnique():
 	errors = []
 	if ensureUniqueFront:
