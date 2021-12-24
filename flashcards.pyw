@@ -23,7 +23,7 @@ def addCard():
 	infoText.set('')
 	if validateBlank() and validateDelimiter():
 		entries.append([frontEntry.get().strip(), backEntry.get().strip()])
-		entriesText.set('saved entries\n' + "\n".join([str(entry) for entry in entries[-maxDisplay:][::-1]]))
+		entriesText.set('added entries\n' + "\n".join([str(entry) for entry in entries[-maxDisplay:][::-1]]))
 		doAfterAddCard()
 
 # workflow after adding card
