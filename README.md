@@ -1,8 +1,8 @@
 # flashcardGenerator
 a widget to create flashcard decks
 - the widget sticks to the top for easier access when working with multiple windows
-- has configurable variables for things like naming files and delimiting front/back entries
-- validation to prevent blank entries or delimiters present the front/back entries themselves
+- has configurable variables for things like naming files and setting validation options
+- validation to prevent blank entries, prevent delimiters present in the front/back entries, ensure flashcard uniqueness
 - supports utf-8 characters
 - example use-case: i use this to generate flashcard decks to import into Anki
 
