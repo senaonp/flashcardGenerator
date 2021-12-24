@@ -26,7 +26,7 @@ a widget to create flashcard decks
 
 <img src="./img/step_4.JPG" width="80%" height="auto">
 
-5) when finished adding cards, click "Save and Exit"; this should close the widget and generate a flashcards file
+5) when finished adding cards, click "Save"; this should generate a flashcards file and output the filename
 
 <img src="./img/step_5.JPG" width="80%" height="auto">
 
