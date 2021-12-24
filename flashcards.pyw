@@ -21,7 +21,7 @@ errorsText = tk.StringVar()
 # add card to session
 def addCard():
 	if validateCard():
-		entries.append([frontEntry.get(),backEntry.get()])
+		entries.append([frontEntry.get().strip(),backEntry.get().strip()])
 		entriesText.set('saved entries\n' + "\n".join([str(entry) for entry in entries[-maxDisplay:][::-1]]))
 		doAfterAddCard()
 
