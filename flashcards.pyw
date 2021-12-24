@@ -29,6 +29,7 @@ def addCard():
 def doAfterAddCard():
 	frontEntry.set("")
 	backEntry.set("")
+	front.focus_set()
 
 # validate card entry
 def validateCard():
@@ -56,8 +57,11 @@ entriesLabel = tk.Label(w, textvariable=entriesText).grid(row=3, column=0, colum
 infoLabel = tk.Label(w, textvariable=infoText, padx=5, pady=5).grid(row=4, column=0, columnspan=2)
 
 # front and back input fields
-front = tk.Entry(w, textvariable=frontEntry).grid(row=1, column=0)
-back = tk.Entry(w, textvariable=backEntry).grid(row=1, column=1)
+front = tk.Entry(w, textvariable=frontEntry)
+front.grid(row=1, column=0)
+front.focus_set()
+back = tk.Entry(w, textvariable=backEntry)
+back.grid(row=1, column=1)
 
 # add card button
 tk.Button(w, text="Add Card", command=addCard).grid(row=2, column=0, pady=5)
