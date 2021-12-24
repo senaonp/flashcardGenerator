@@ -20,8 +20,9 @@ infoText = tk.StringVar()
 
 # add card to session
 def addCard():
-	if validateCard():
-		entries.append([frontEntry.get().strip(),backEntry.get().strip()])
+	infoText.set('')
+	if validateBlank() and validateDelimiter():
+		entries.append([frontEntry.get().strip(), backEntry.get().strip()])
 		entriesText.set('saved entries\n' + "\n".join([str(entry) for entry in entries[-maxDisplay:][::-1]]))
 		doAfterAddCard()
 
@@ -32,14 +33,24 @@ def doAfterAddCard():
 	front.focus_set()
 
 # validate card entry
-def validateCard():
-	infoText.set('')
+def validateBlank():
 	if allowBlankCards:
 		return True
 	isValid = (frontEntry.get().strip() != "" and backEntry.get().strip() != "")
 	if not isValid:
 		infoText.set('error: front or back entries cannot be blank')
 	return isValid
+
+# validate delimiter
+def validateDelimiter():
+	errors = []
+	if delimiter in frontEntry.get():
+		errors.append(f'error: delimiter ({delimiter}) is in the front card entry')
+	if delimiter in backEntry.get():
+		errors.append(f'error: delimiter ({delimiter}) is in the back card entry')
+	infoText.set("\n".join(errors))
+	return len(errors) == 0
+	
 
 # save entries into file
 def saveCards():
