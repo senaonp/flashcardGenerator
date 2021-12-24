@@ -2,7 +2,10 @@
 a widget to create flashcard decks
 - the widget sticks to the top for easier access when working with multiple windows
 - has configurable variables for things like naming files and delimiting front/back card entries
+- supports utf-8 characters
 - example use-case: i use this to generate flashcard decks to import into Anki
+
+<img src="./img/preview.jpg" width="100%" height="auto">
 
 -----
 
