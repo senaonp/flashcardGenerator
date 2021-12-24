@@ -29,7 +29,7 @@ def doAfterAddCard():
 def validateCard():
 	errorsText.set('')
 	if allowBlankCards:
-		return
+		return True
 	isValid = (frontEntry.get().strip() != "" and backEntry.get().strip() != "")
 	if not isValid:
 		errorsText.set('error: front or back entries cannot be blank')
