@@ -40,7 +40,7 @@ def validateCard():
 		infoText.set('error: front or back entries cannot be blank')
 	return isValid
 
-# save entries into deck and exit program
+# save entries into file
 def saveCards():
 	fileText = "\n".join([delimiter.join(entry) for entry in entries])
 	with open(filename, 'w', encoding='utf-8') as file:
