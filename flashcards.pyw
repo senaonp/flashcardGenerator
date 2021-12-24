@@ -42,9 +42,10 @@ def validateCard():
 
 # save entries into deck and exit program
 def saveAndExit():
-	file = open(filename, "w")
-	file.write("\n".join([delimiter.join(entry) for entry in entries]))
-	file.close()
+	fileText = "\n".join([delimiter.join(entry) for entry in entries])
+	with open(filename, 'w', encoding='utf-8') as file:
+		file.write(fileText)
+		file.close()
 	exit()
 
 # labels
